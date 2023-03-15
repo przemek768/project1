@@ -2,13 +2,21 @@
 
 namespace App\Controller;
 
-use http\Env\Request;
+use App\Entity\Users;
+use App\Form\LoginFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MainViewController extends AbstractController
 {
+    public function __construct(
+    )
+    {
+    }
+
     #[Route('/', name: 'app_main_view')]
     public function index(Request $request): Response
     {
